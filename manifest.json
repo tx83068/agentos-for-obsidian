@@ -1,7 +1,7 @@
 {
   "id": "agentos",
   "name": "AgentOS",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minAppVersion": "1.11.4",
   "description": "Use an existing AgentOS runtime from an Obsidian side panel.",
   "author": "systemgod",
