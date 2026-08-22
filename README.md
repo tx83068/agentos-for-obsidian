@@ -14,4 +14,4 @@ Forgejo remains the canonical source and build system. Before submitting to the 
 
 ## Release policy
 
-Releases are created only from version tags by GitHub Actions after validating the three complete bundle files, manifest/version consistency, mobile-safe bundle rules, and artifact hashes. No release is created by the workflow until those checks pass.
+Releases are created only from version tags by GitHub Actions after validating the three complete bundle files, manifest/version consistency, mobile-safe bundle rules, artifact hashes, and a checked-in attestation from the canonical Forgejo build/test pipeline. No release is created by the workflow until those checks pass.
