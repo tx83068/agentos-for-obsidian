@@ -1,0 +1,23 @@
+{
+  "sourceRepo": "ssh://git@192.168.30.33:2222/systemgod/agentos-for-obsidian.git",
+  "sourceCommit": "4e7cc658f4e2892baf27b5d914e811a48b2ec285",
+  "buildPassed": true,
+  "testsPassed": true,
+  "mobileCheckPassed": true,
+  "pluginVersion": "0.1.2",
+  "assets": {
+    "manifest.json": {
+      "sha256": "45f46a484c062774b011d03f363f584fbb6cf7cdd19744e0285828ad07b5bcbb",
+      "bytes": 226
+    },
+    "main.js": {
+      "sha256": "6bf510f64867685d71301c9a5601a30e0c7002ff61cc1a3b70483b8d1c6cb1ce",
+      "bytes": 75601
+    },
+    "styles.css": {
+      "sha256": "da8d65035e534bcdbad8128295bb771b14ac3016fb46d0856a553d015d464999",
+      "bytes": 9836
+    }
+  },
+  "generatedAt": "2026-08-22T22:26:00Z"
+}
