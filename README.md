@@ -1,17 +1,31 @@
 # AgentOS
 
-AgentOS is an Obsidian community-plugin distribution build for a server-backed AgentOS runtime.
+AgentOS is a BRAT-installed Obsidian plugin distribution for a server-backed
+AgentOS runtime.
 
-This repository contains distribution artifacts only. The canonical source repository remains the private Forgejo project. The community build does not self-update through an AgentOS bridge; updates are delivered as reviewed GitHub Releases.
+This repository contains distribution artifacts only. Forgejo remains the
+canonical source, and `tx83068/agentos-for-obsidian-source` is the private
+one-way source mirror. Public semver GitHub Releases are the production/private
+distribution channel. The plugin never self-updates through the AgentOS bridge.
 
-## Installation
+## Installation with BRAT
 
-Install the release assets into the Obsidian plugin folder `agentos` and enable the plugin. The plugin is mobile-compatible (`isDesktopOnly: false`).
+In Obsidian, install the BRAT community plugin, add:
 
-## Source and review
+`https://github.com/tx83068/agentos-for-obsidian`
 
-Forgejo remains the canonical source and build system. Before submitting to the Obsidian Community Directory, the project must provide Obsidian reviewers with a public, reviewable source repository or an approved public source mirror. This distribution repository intentionally does not publish private infrastructure, credentials, server URLs, or AgentOS runtime configuration.
+Then select a tagged release and install/update the `agentos` plugin. Each
+release contains the complete `manifest.json`, `main.js`, and `styles.css`
+bundle and is mobile-compatible (`isDesktopOnly: false`).
+
+The official Obsidian Community Directory is not used for this distribution
+decision. Hidden File Sync, Customisation Sync and LiveSync are never used for
+plugin bundle delivery.
 
 ## Release policy
 
-Releases are created only from version tags by GitHub Actions after validating the three complete bundle files, manifest/version consistency, mobile-safe bundle rules, artifact hashes, and a checked-in attestation from the canonical Forgejo build/test pipeline. No release is created by the workflow until those checks pass.
+GitHub Actions runs only for strict semver tags `vX.Y.Z`. Before creating a
+Release it validates manifest/version consistency, BRAT-compatible plugin
+metadata, complete assets, mobile-safe bundle rules, forbidden self-update
+markers, SHA-256 assets, and a previous-to-next version upgrade. A checked-in
+Forgejo build/test attestation is also required.
