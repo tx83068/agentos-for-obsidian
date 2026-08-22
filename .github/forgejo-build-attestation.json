@@ -1,6 +1,6 @@
 {
   "sourceRepo": "ssh://git@192.168.30.33:2222/systemgod/agentos-for-obsidian.git",
-  "sourceCommit": "4e7cc658f4e2892baf27b5d914e811a48b2ec285",
+  "sourceCommit": "a3107b689b039305ee62461714827098a92d41be",
   "buildPassed": true,
   "testsPassed": true,
   "mobileCheckPassed": true,
@@ -19,5 +19,5 @@
       "bytes": 9836
     }
   },
-  "generatedAt": "2026-08-22T22:26:00Z"
+  "generatedAt": "2026-08-22T22:30:00Z"
 }
