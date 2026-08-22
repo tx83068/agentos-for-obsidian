@@ -18,6 +18,10 @@ jobs:
           node-version: '22.x'
       - name: Verify distribution bundle
         run: node scripts/verify-distribution.mjs
+      - name: Require canonical Forgejo build and test attestation
+        run: |
+          test -f .github/forgejo-build-attestation.json
+          node -e 'const a=require("./.github/forgejo-build-attestation.json"); for (const k of ["sourceRepo","sourceCommit","buildPassed","testsPassed","mobileCheckPassed"]) if (!a[k] || (k.endsWith("Passed") && a[k] !== true)) throw new Error(`missing or false attestation field: ${k}`)'
       - name: Create GitHub Release with complete bundle
         uses: softprops/action-gh-release@v2
         with:
