@@ -32,12 +32,17 @@ jobs:
           REQUESTED_VERSION: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
         run: |
           set -euo pipefail
-          if [[ ! "${REQUESTED_VERSION}" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
-            echo "Release version must be strict vX.Y.Z semver: ${REQUESTED_VERSION}" >&2
+          # GitHub's manual-input value can contain pasted surrounding spaces
+          # or CR/LF from the dispatch form. Normalize only the boundaries;
+          # internal whitespace/newlines must still fail strict semver.
+          trimmed="${REQUESTED_VERSION#"${REQUESTED_VERSION%%[!$' \t\r\n']*}"}"
+          trimmed="${trimmed%"${trimmed##*[!$' \t\r\n']}"}"
+          if [[ ! "${trimmed}" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+            printf 'Release version must be strict vX.Y.Z semver; received %q (raw %q)\n' "${trimmed}" "${REQUESTED_VERSION}" >&2
             exit 1
           fi
-          echo "RELEASE_TAG=${REQUESTED_VERSION}" >> "${GITHUB_ENV}"
-          echo "RELEASE_VERSION=${REQUESTED_VERSION#v}" >> "${GITHUB_ENV}"
+          echo "RELEASE_TAG=${trimmed}" >> "${GITHUB_ENV}"
+          echo "RELEASE_VERSION=${trimmed#v}" >> "${GITHUB_ENV}"
 
       - name: Check requested version matches manifest
         run: |
