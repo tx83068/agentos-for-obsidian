@@ -67,7 +67,7 @@ jobs:
 
       - name: Verify BRAT compatibility and previous-to-next upgrade
         env:
-          GITHUB_REF_NAME: ${{ steps.version.outputs.tag }}
+          RELEASE_TAG: ${{ steps.version.outputs.tag }}
         run: node scripts/verify-brat-release.mjs
 
       - name: Require canonical Forgejo build/test attestation
