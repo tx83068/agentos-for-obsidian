@@ -5,7 +5,7 @@ import { execFileSync } from "node:child_process";
 const semver = /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/;
 const manifest = JSON.parse(await readFile("manifest.json", "utf8"));
 const versions = JSON.parse(await readFile("versions.json", "utf8"));
-const tag = process.env.GITHUB_REF_NAME ?? "";
+const tag = process.env.RELEASE_TAG ?? "";
 if (!/^v\d+\.\d+\.\d+$/.test(tag)) throw new Error("release must be a strict vX.Y.Z tag");
 if (!semver.test(manifest.version)) throw new Error("manifest version must be strict semver");
 if (tag.slice(1) !== manifest.version) throw new Error("tag and manifest version differ");
