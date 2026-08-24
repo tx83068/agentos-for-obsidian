@@ -132,6 +132,64 @@
 .agentos-message-content {
   overflow-wrap: anywhere;
   white-space: pre-wrap;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.agentos-copy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.agentos-copy-button {
+  padding: 3px 7px;
+  font-size: var(--font-ui-smaller);
+}
+
+.agentos-tool-execution,
+.agentos-tool-execution-details,
+.agentos-tool-execution-details pre,
+.agentos-external-view-body,
+.agentos-external-view-body pre,
+.agentos-graphify-details {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.agentos-tool-execution {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.agentos-tool-execution-title {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.agentos-tool-execution-state {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+  text-transform: uppercase;
+}
+
+.agentos-tool-execution-details {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.agentos-tool-execution-details pre,
+.agentos-copyable-code {
+  max-height: 320px;
+  overflow: auto;
+  margin: 4px 0;
+  padding: 7px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--background-primary);
 }
 
 .agentos-events {
@@ -386,6 +444,28 @@
 
 .agentos-forgejo-repo {
   flex: 1 1 220px;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 7px;
+  background: var(--background-secondary);
+  text-align: left;
+}
+
+.agentos-forgejo-repo-open,
+.agentos-forgejo-item-open,
+.agentos-forgejo-code-entry button {
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.agentos-forgejo-repo-open {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-normal);
+  text-align: left;
 }
 
 .agentos-forgejo-repositories.is-hidden,
@@ -422,6 +502,39 @@
   overflow-wrap: anywhere;
 }
 
+.agentos-forgejo-item-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-normal);
+  text-align: left;
+}
+
+.agentos-forgejo-code-entry,
+.agentos-forgejo-file-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.agentos-forgejo-code-entry button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-accent);
+  text-align: left;
+}
+
+.agentos-selectable {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
 .agentos-graphify-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -448,6 +561,13 @@
   border: 1px solid var(--background-modifier-border);
   border-radius: 8px;
   background: var(--background-primary);
+  touch-action: none;
+}
+
+.agentos-graphify-canvas-controls {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
 }
 
 .agentos-graphify-canvas svg {
@@ -455,6 +575,7 @@
   width: 100%;
   height: auto;
   min-height: 260px;
+  touch-action: none;
 }
 
 .agentos-graphify-edge {
