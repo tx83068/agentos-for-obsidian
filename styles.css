@@ -442,6 +442,72 @@
   text-align: left;
 }
 
+.agentos-graphify-mode-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.agentos-graphify-mode-bar button.is-active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.agentos-graphify-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 7px;
+  background: var(--background-secondary);
+  white-space: nowrap;
+}
+
+.agentos-graphify-help {
+  margin: 8px 0;
+  padding: 7px 9px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 7px;
+}
+
+.agentos-graphify-help summary {
+  cursor: pointer;
+  font-weight: var(--font-semibold);
+}
+
+.agentos-graphify-relation {
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
+}
+
+.agentos-graphify-utility {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.agentos-graphify-path-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.agentos-graphify-path-form input {
+  min-width: 140px;
+  flex: 1 1 180px;
+}
+
+.agentos-graphify-utility-result {
+  display: grid;
+  gap: 4px;
+  color: var(--text-muted);
+  user-select: text;
+  -webkit-user-select: text;
+}
+
 .agentos-forgejo-repo {
   flex: 1 1 220px;
   padding: 8px;
@@ -520,6 +586,38 @@
   align-items: baseline;
   padding: 7px 0;
   border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.agentos-forgejo-breadcrumbs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-items: center;
+  min-width: 0;
+}
+
+.agentos-forgejo-breadcrumbs button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-accent);
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.agentos-forgejo-markdown {
+  padding: 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.agentos-forgejo-list-summary {
+  margin: 6px 0;
+  color: var(--text-muted);
+  font-size: var(--font-ui-smaller);
 }
 
 .agentos-forgejo-code-entry button {
@@ -615,6 +713,12 @@
 
 .agentos-graphify-neighbor-label {
   margin-top: 6px;
+}
+
+.agentos-graphify-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 @media (max-width: 520px) {
